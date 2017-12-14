@@ -6,12 +6,12 @@ import { MatButtonModule, MatIconModule, MatButtonToggleModule } from '@angular/
 
 import { TranslateModule } from '@ngx-translate/core';
 
-import { DateListEditExampleComponent } from './time-range-list-edit-example.component';
+import { TimeRangeEditExampleComponent } from './time-range-edit-example.component';
 import { PipTimeRangeEditModule } from '../pip-webui2-dates';
 
 @NgModule({
   declarations: [
-    DateListEditExampleComponent
+    TimeRangeEditExampleComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +27,7 @@ import { PipTimeRangeEditModule } from '../pip-webui2-dates';
     PipTimeRangeEditModule
   ],
   exports: [
-    DateListEditExampleComponent
+    TimeRangeEditExampleComponent
   ]
 })
 export class TimeRangeEditExampleModule { }

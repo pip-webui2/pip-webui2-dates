@@ -8,6 +8,7 @@ import { Component, Input, Output, OnInit, AfterViewInit, ViewChild, EventEmitte
 })
 export class PipTimeRangeEditComponent implements OnInit, AfterViewInit {
    
+    ngOnInit() {}
 
     constructor(
         private renderer: Renderer,

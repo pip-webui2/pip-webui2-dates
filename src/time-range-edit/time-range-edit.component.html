@@ -1,8 +1,0 @@
-<pip-time-range [time-rangeUrl]="time-range.src" 
-    noErrorState="true" [time-rangeName]="time-range.name" 
-    openInTab="false" [progressVisibility]="isProgress" 
-    (onCancelClick)="onCancelClick()" (onTimeRangeClick)="onTimeRangeClick()"
-    [defaultIcon]="defaultIcon">
-</pip-time-range>
-<input #fileInput type="file" name="file" (change)="changeFile($event)" multiple [disabled]="disabled">
-<button mat-icon-button *ngIf="time-range.src" class="delete-button" (click)="onDeleteClick($event)"><mat-icon>clear</mat-icon></button>

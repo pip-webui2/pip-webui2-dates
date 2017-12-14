@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatIconModule, MatProgressBarModule } from '@angular/material';
 
-import { PipTimeRangeComponent } from './date.component';
+import { PipTimeRangeComponent } from './time-range.component';
 
 @NgModule({
   declarations: [

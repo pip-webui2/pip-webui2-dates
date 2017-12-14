@@ -2,9 +2,9 @@ import * as _ from 'lodash';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'date-list-edit-example',
-    templateUrl: 'date-list-edit-example.component.html',
-    styleUrls: ['./date-list-edit-example.component.scss']
+    selector: 'time-range-edit-example',
+    templateUrl: 'time-range-edit-example.component.html',
+    styleUrls: ['./time-range-edit-example.component.scss']
 })
 export class TimeRangeEditExampleComponent implements OnInit {
 

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-	selector: 'date-list-example',
-	templateUrl: 'date-list-example.component.html',
-	styleUrls: ['./date-list-example.component.scss']
+	selector: 'time-range-example',
+	templateUrl: 'time-range-example.component.html',
+	styleUrls: ['./time-range-example.component.scss']
 })
 export class TimeRangeExampleComponent implements OnInit {
 
