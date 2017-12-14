@@ -31,7 +31,7 @@ export class PipTimeRangeEditComponent implements OnInit, AfterViewInit {
     @Output() startDateChange: EventEmitter<any> = new EventEmitter<any>();
     @Output() endDateChange: EventEmitter<any> = new EventEmitter<any>();
 
-    public times: Date[] = [];
+    public times: any[] = [];
 
     ngOnInit() {
         this.generateTimes();
@@ -63,8 +63,12 @@ export class PipTimeRangeEditComponent implements OnInit, AfterViewInit {
 
         for (let i = 0; i < 24 * 60; i = i + this.intervalInMinutes) {
             start.setHours(i / 60, i%60);
+            let h: any = start.getHours();
+            let m: any = start.getMinutes();
+            h = String(h).length == 1 ? '0' + String(h) : h;
+            m = String(m).length == 1 ? '0' + String(m) : m;
             this.times.push(
-                _.clone(start)
+                { name: h + ':' + m, date: start }
             );
         }
     }

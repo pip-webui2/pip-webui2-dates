@@ -14,8 +14,8 @@
             </mat-form-field>
             <mat-form-field fxFlex>
                 <mat-select placeholder="" [(value)]="startTime" (change)="onStartTimeChange($event)">
-                    <mat-option *ngFor="let time of times" [value]="time">
-                        {{ time | localizedDate: 'HH:mm' }}
+                    <mat-option *ngFor="let time of times" [value]="time.date">
+                        {{ time.name }}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
@@ -30,8 +30,8 @@
             </mat-form-field>
             <mat-form-field fxFlex>
                 <mat-select placeholder="" [(value)]="endTime" (change)="onEndTimeChange($event)">
-                    <mat-option *ngFor="let time of times" [value]="time">
-                        {{ time | localizedDate: 'HH:mm' }}
+                    <mat-option *ngFor="let time of times" [value]="time.date">
+                        {{ time.name }}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
