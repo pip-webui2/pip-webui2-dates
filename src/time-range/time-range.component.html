@@ -1,0 +1,6 @@
+<div>
+    <mat-icon *ngIf="showIcon">{{ icon || 'access_time' }}</mat-icon>
+    <span class="pip-start-date" *ngIf="startDate">{{ startDate | localizedDate: format }}</span>
+    <span class="pip-divider" *ngIf="startDate && endDate"> - </span>
+    <span class="pip-end-date" *ngIf="endDate">{{ endDate | localizedDate: format }}</span>
+</div>

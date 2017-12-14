@@ -1,0 +1,40 @@
+<div fxLayout="column" fxLayoutAlign="start stretch">
+    <div fxLayout="row" fxLayoutAlign="start start">
+        <span fxFlex class="margin-right">{{ startLabel | translate }}</span>
+        <span fxFlex>{{ endLabel | translate }}</span>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxLayout="row" fxLayoutAlign="start center" class="time-container margin-right">
+            <mat-form-field fxFlex class="margin-right">
+                <input matInput [value]="startDate" (dateChange)="onStartDateChange($event)" [matDatepicker]="picker" placeholder="">
+                <button mat-icon-button matSuffix>
+                    <mat-icon (click)="picker.open()">arrow_drop_down</mat-icon>
+                </button>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field fxFlex>
+                <mat-select placeholder="" [(value)]="startTime" (change)="onStartTimeChange($event)">
+                    <mat-option *ngFor="let time of times" [value]="time">
+                        {{ time | localizedDate: 'HH:mm' }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="start center" class="time-container">
+            <mat-form-field fxFlex class="margin-right">
+                <input matInput [value]="endDate" (dateChange)="onEndDateChange($event)" [matDatepicker]="pickerEnd" placeholder="">
+                <button mat-icon-button matSuffix>
+                    <mat-icon (click)="pickerEnd.open()">arrow_drop_down</mat-icon>
+                </button>
+                <mat-datepicker #pickerEnd></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field fxFlex>
+                <mat-select placeholder="" [(value)]="endTime" (change)="onEndTimeChange($event)">
+                    <mat-option *ngFor="let time of times" [value]="time">
+                        {{ time | localizedDate: 'HH:mm' }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+</div>

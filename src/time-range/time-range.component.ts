@@ -6,10 +6,20 @@ import { Component, Input, Output, OnInit, AfterViewInit, EventEmitter, Renderer
     styleUrls: ['./time-range.component.scss']
 })
 export class PipTimeRangeComponent implements OnInit, AfterViewInit {
-    
-    ngOnInit() {
-      
+    @Input() public showIcon: boolean = true;
+    @Input() public icon: string = 'access_time';
+    @Input() public format: string = 'dd MMM yyyy HH:mm';
+    public startDate: Date = null;
+    public endDate: Date = null;
+    @Input('startDate') set start(date: any) {
+        this.startDate = new Date(date);
     }
+
+    @Input('endDate') set end(date: any) {
+        this.endDate = new Date(date);
+    }
+
+    ngOnInit() { }
 
     constructor(
         private renderer: Renderer,

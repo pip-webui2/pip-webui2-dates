@@ -9,28 +9,8 @@ export class TimeRangeExampleComponent implements OnInit {
 
 	ngOnInit() { }
 
-	public isProgress: boolean = true;
+    public startDate = new Date();
+    public endDate = new Date().setMinutes(this.startDate.getMinutes() + 15);
 
-	public openMe() {
-		console.log('open me please');
-	}
-
-	public onCancelClick() {
-		this.isProgress = false;
-	}
-
-	public docs = [
-        {
-            url: './assets/boy.png'
-        },
-        {
-            url: './assets/girl.png'
-        },
-        {
-            url: './assets/girl2.png'
-        },
-        {
-            url: './assets/boy2.png'
-        }
-    ];
+	
 }

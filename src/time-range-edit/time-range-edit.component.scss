@@ -1,79 +1,82 @@
 @import '~@angular/material/theming';
 @import '~pip-webui2-themes/src/styles.scss';
 @include mat-core();
-@mixin time-range-mixin($theme) {
-    $foreground: map-get($theme, foreground);
+@mixin location-edit-mixin($theme) {
     $background: map-get($theme, background);
-     :host {
-        border: dashed 2px mat-color($foreground, divider);
-        .delete-button {
-            color: mat-color($foreground, text);
-            background: mat-color($background, card);
-            opacity: 0.56;
-        }
-
-        &:hover pip-time-range {
-            background: mat-color($foreground, divider);
-        }
+    $foreground: map-get($theme, foreground);
+     :host .mat-form-field /deep/ .mat-input-suffix .mat-icon {
+        color: mat-color($foreground, secondary-text);
     }
 }
 
 .unicorn-dark-theme {
-    @include time-range-mixin($dark-theme);
+    @include location-edit-mixin($dark-theme);
 }
 
 .candy-theme {
-    @include time-range-mixin($candy-app-theme);
+    @include location-edit-mixin($candy-app-theme);
 }
 
 .pip-blue-theme {
-    @include time-range-mixin($pip-blue-theme);
+    @include location-edit-mixin($pip-blue-theme);
 }
 
 .pip-grey-theme {
-    @include time-range-mixin($pip-grey-theme);
+    @include location-edit-mixin($pip-grey-theme);
 }
 
 .pip-navy-theme {
-    @include time-range-mixin($pip-navy-theme);
+    @include location-edit-mixin($pip-navy-theme);
 }
 
 .pip-amber-theme {
-    @include time-range-mixin($pip-amber-theme);
+    @include location-edit-mixin($pip-amber-theme);
 }
 
 .pip-green-theme {
-    @include time-range-mixin($pip-green-theme);
+    @include location-edit-mixin($pip-green-theme);
 }
 
 .pip-orange-theme {
-    @include time-range-mixin($pip-orange-theme);
+    @include location-edit-mixin($pip-orange-theme);
 }
 
 .pip-pink-theme {
-    @include time-range-mixin($pip-pink-theme);
+    @include location-edit-mixin($pip-pink-theme);
 }
 
 .pip-dark-theme {
-    @include time-range-mixin($pip-dark-theme);
+    @include location-edit-mixin($pip-dark-theme);
 }
 
 .pip-black-theme {
-    @include time-range-mixin($pip-black-theme);
+    @include location-edit-mixin($pip-black-theme);
 }
 
 .bootbarn-warm-theme {
-    @include time-range-mixin($bootbarn-warm-theme);
+    @include location-edit-mixin($bootbarn-warm-theme);
 }
 
 .bootbarn-cool-theme {
-    @include time-range-mixin($bootbarn-cool-theme);
+    @include location-edit-mixin($bootbarn-cool-theme);
 }
 
 .bootbarn-mono-theme {
-    @include time-range-mixin($bootbarn-mono-theme);
+    @include location-edit-mixin($bootbarn-mono-theme);
 }
 
 :host {
-   
+    .margin-right {
+        margin-right: 8px;
+    }
+    .mat-form-field {
+        width: auto;
+        /deep/ .mat-input-suffix {
+            .mat-icon {
+                height: 29px;
+                width: 22px;
+                font-size: 23px;
+            }
+        }
+    }
 }

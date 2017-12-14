@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 
 import { BrowserModule } from '@angular/platform-browser';
-import { MatButtonModule, MatIconModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { TranslateModule } from '@ngx-translate/core';
+import { MatButtonModule, MatIconModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatSelectModule } from '@angular/material';
 
-import { PipTimeRangeModule } from '../time-range/time-range.module';
+import { PipDatePipesModule } from '../shared/pipes/pipes.module';
 
 import { PipTimeRangeEditComponent } from './time-range-edit.component';
 
@@ -13,10 +15,16 @@ import { PipTimeRangeEditComponent } from './time-range-edit.component';
   ],
   imports: [
     BrowserModule,
+    FlexLayoutModule,
+    TranslateModule,
     MatButtonModule,
     MatIconModule,
+    MatInputModule, 
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
 
-    PipTimeRangeModule
+    PipDatePipesModule
   ],
   exports: [
     PipTimeRangeEditComponent

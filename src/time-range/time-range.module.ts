@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatIconModule, MatProgressBarModule } from '@angular/material';
 
+import { PipDatePipesModule } from '../shared/pipes/pipes.module';
+
 import { PipTimeRangeComponent } from './time-range.component';
 
 @NgModule({
@@ -14,7 +16,9 @@ import { PipTimeRangeComponent } from './time-range.component';
     BrowserModule,
     FlexLayoutModule,
     MatIconModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    
+    PipDatePipesModule
   ],
   exports: [
     PipTimeRangeComponent
