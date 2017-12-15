@@ -19,23 +19,28 @@ export class PipTimeRangeEditComponent implements OnInit, AfterViewInit {
     @Input() public endLabel: string = 'DATES.END_TIME';
     @Input() intervalInMinutes: number = 30;
     @Input('startDate') set start(date: any) {
+        if (this.startDate == date) return;
+
         this.startDate = new Date(date);
         this.setStartTime(this.startDate);
+        this.checkRange();
     }
 
     @Input('endDate') set end(date: any) {
+        if (this.endDate == date) return;
+
         this.endDate = new Date(date);
         this.setEndTime(this.endDate);
+        this.checkRange(false);
     }
 
     @Output() startDateChange: EventEmitter<any> = new EventEmitter<any>();
     @Output() endDateChange: EventEmitter<any> = new EventEmitter<any>();
 
     public times: any[] = [];
+    private range: number = this.intervalInMinutes * 60 * 1000;
 
-    ngOnInit() {
-        this.generateTimes();
-    }
+    ngOnInit() {}
 
     constructor(
         private renderer: Renderer,
@@ -46,6 +51,8 @@ export class PipTimeRangeEditComponent implements OnInit, AfterViewInit {
 
         this.translate.setTranslation('en', TimeRangeEditTranslations.en, true);
         this.translate.setTranslation('ru', TimeRangeEditTranslations.ru, true);
+
+        this.generateTimes();
     }
 
     ngAfterViewInit() { }
@@ -68,56 +75,82 @@ export class PipTimeRangeEditComponent implements OnInit, AfterViewInit {
             h = String(h).length == 1 ? '0' + String(h) : h;
             m = String(m).length == 1 ? '0' + String(m) : m;
             this.times.push(
-                { name: h + ':' + m, date: start }
+                { name: h + ':' + m, date: _.clone(start) }
             );
         }
     }
 
     private setStartTime(date: Date) {
-        if (!this.startTime) this.startTime = new Date();
-        this.startTime.setHours(date.getHours(), date.getMinutes());
+        this.startTime = this.getTimeByDate(date);
     }
 
     private setEndTime(date: Date) {
-        if (!this.endTime) this.endTime = new Date();
-        this.endTime.setHours(date.getHours(), date.getMinutes());
+        this.endTime = this.getTimeByDate(date);
     }
 
     public onStartTimeChange(startTime) {
-        if (!this.startTime) this.startTime = new Date(startTime.value);
+        this.startTime = new Date(startTime.value);
         if (!this.startDate) this.startDate = new Date();
         this.startDate.setHours(this.startTime.getHours(), this.startTime.getMinutes());
-        this.startDateChange.emit(this.startDate);
+        if (this.checkRange()) this.endDateChange.emit(new Date(this.endDate));
+        this.startDateChange.emit(new Date(this.startDate));
     }
 
     public onEndTimeChange(endTime) {
-        if (!this.endTime) this.endTime = this.times[0];
+        this.endTime = new Date(endTime.value);
         if (!this.endDate) this.endDate = new Date();
         this.endDate.setHours(this.endTime.getHours(), this.endTime.getMinutes());
-        this.endDateChange.emit(this.endDate);
+        if (this.checkRange(false)) this.startDateChange.emit(new Date(this.startDate));
+        this.endDateChange.emit(new Date(this.endDate));
     }
 
     public onStartDateChange(startDate) {
-        if (!this.startTime) this.startTime = this.getTimeByDate(startDate.value);
-        if (!this.startDate) this.startDate = new Date(startDate.value);
-        this.startDateChange.emit(this.startDate);
+        this.setStartValuesByDate(startDate.value, false);
+        if (this.checkRange()) this.endDateChange.emit(new Date(this.endDate));
+        this.startDateChange.emit(new Date(this.startDate));
     }
 
     public onEndDateChange(endDate) {
-        if (!this.endTime) this.endTime = new Date();
-        if (!this.endDate) this.endDate = new Date(endDate.value);
-        this.endDateChange.emit(this.endDate);
+        this.setEndValuesByDate(endDate.value, false);
+        if (this.checkRange(false)) this.startDateChange.emit(new Date(this.startDate));
+        this.endDateChange.emit(new Date(this.endDate));
+    }
+
+    private setStartValuesByDate(startDate, updateTime: boolean = true) {
+        if (updateTime || !this.startTime) this.startTime = this.getTimeByDate(startDate);
+        this.startDate = new Date(startDate);
+        this.startDate.setHours(this.startTime.getHours(), this.startTime.getMinutes(), 0, 0);
+    }
+
+    private setEndValuesByDate(endDate, updateTime: boolean = true) {
+        if (updateTime || !this.endTime) this.endTime = this.getTimeByDate(endDate);
+        this.endDate = new Date(endDate);
+        this.endDate.setHours(this.endTime.getHours(), this.endTime.getMinutes(), 0, 0);
     }
 
     private getTimeByDate(date: Date) {
         let d: Date = new Date();
         let intervalInMs = this.intervalInMinutes * 60 * 1000;
         d.setHours(date.getHours(), date.getMinutes(), 0, 0);
-        console.log('d', d);
         for (let i = 0; i < 24 * 60 / this.intervalInMinutes; i++) {
-            if (Math.abs(this.times[i].getTime() - d.getTime()) < intervalInMs) return this.times[i];
+            if (Math.abs(this.times[i].date.getTime() - d.getTime()) < intervalInMs) return this.times[i].date;
         }
 
-        return this.times[0];
+        return this.times[0].date;
+    }
+
+    private checkRange(start: boolean = true) {
+        if (this.startDate && this.endDate) {
+            if (this.startDate.getTime() > this.endDate.getTime()) {
+                if (start) this.setEndValuesByDate(new Date(this.startDate.getTime() + this.range));
+                else this.setStartValuesByDate(new Date(this.endDate.getTime() - this.range));
+
+                return true;
+            } else {
+                this.range = this.endDate.getTime() - this.startDate.getTime();
+
+                return false;
+            }
+        }
     }
 }

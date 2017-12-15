@@ -30,14 +30,14 @@ export class AppComponent {
   public selectedTheme: Theme;
   public activeMediaQuery: boolean;
   public mode: string;
-  public app: string = 'time-range';
+  public app: string = 'Dates';
   public url: string;
   public langs: string[] = [];
   public selectedLang: string = 'en';
 
   public list: any[] = [
     {
-      name: 'Date-time range view', id: 'date_time_range_list', route: 'date_time_range'
+      name: 'Date-time range', id: 'date_time_range_list', route: 'date_time_range'
     },
     {
       name: 'Date-time range Edit', id: 'date_time_range_list_edit', route: 'date_time_range_edit'

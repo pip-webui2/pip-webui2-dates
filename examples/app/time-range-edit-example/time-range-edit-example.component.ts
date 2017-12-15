@@ -17,44 +17,11 @@ export class TimeRangeEditExampleComponent implements OnInit {
     ];
     public disabled: boolean = false;
 
-    ngOnInit() { }
-
-    public onImageLoad(results) {
-        console.log('Image loaded: ', results);
+    ngOnInit() { 
+        this.startDate.setHours(10, 0, 0, 0);
+        this.endDate.setHours(this.startDate.getHours() + 10);
     }
 
-    public onImageDelete(results) {
-        console.log('Image deleted!');
-    }
-
-    public docs: any[] = [
-        {
-            url: './assets/boy.png'
-        },
-        {
-            url: './assets/girl.png'
-        },
-        {
-            url: './assets/girl2.png'
-        },
-        {
-            url: './assets/boy2.png'
-        }
-    ];
-
-    public uploadDocs() {
-        _.each(this.docs, (doc) => {
-            doc.progressVisibility = true;
-            doc.progressMode = 'indeterminate';
-            this.disabled = true;
-            setTimeout(() => {
-                 doc.progressVisibility = false;
-                 this.disabled = false;
-            }, 2000);
-        });
-    }
-
-    public updateDates(docs) {
-        this.docs = docs;
-    }
+    public startDate = new Date();
+    public endDate = new Date();
 }

@@ -7,7 +7,7 @@ import { MatButtonModule, MatIconModule, MatButtonToggleModule } from '@angular/
 import { TranslateModule } from '@ngx-translate/core';
 
 import { TimeRangeEditExampleComponent } from './time-range-edit-example.component';
-import { PipTimeRangeEditModule } from '../pip-webui2-dates';
+import { PipTimeRangeEditModule, PipTimeRangeModule } from '../pip-webui2-dates';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,8 @@ import { PipTimeRangeEditModule } from '../pip-webui2-dates';
 
     TranslateModule,
 
-    PipTimeRangeEditModule
+    PipTimeRangeEditModule,
+    PipTimeRangeModule
   ],
   exports: [
     TimeRangeEditExampleComponent
