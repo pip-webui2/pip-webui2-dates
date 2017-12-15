@@ -1,4 +1,6 @@
 import * as _ from 'lodash';
+import { Observable } from 'rxjs/Observable';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,15 +10,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimeRangeEditExampleComponent implements OnInit {
 
-    public sources: string[] = [
-        './assets/boy.png',
-        './assets/girl2.png',
-        './assets/boy2.png',
-        './assets/girl.png',
-        'https://i.pinimg.com/736x/da/af/73/daaf73960eb5a21d6bca748195f12052--lion-photography-lion-kings.jpg'
-    ];
-    public disabled: boolean = false;
-
     ngOnInit() { 
         this.startDate.setHours(10, 0, 0, 0);
         this.endDate.setHours(this.startDate.getHours() + 10);
@@ -24,4 +17,8 @@ export class TimeRangeEditExampleComponent implements OnInit {
 
     public startDate = new Date();
     public endDate = new Date();
+
+    public startDate$: BehaviorSubject<Date> = new BehaviorSubject<Date>(this.startDate);
+
+    
 }
