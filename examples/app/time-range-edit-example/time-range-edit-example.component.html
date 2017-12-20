@@ -1,5 +1,4 @@
 <pip-time-range-edit [startDate]="startDate$ | async" [endDate]="endDate" 
     (startDateChange)="startDate$.next($event)" (endDateChange)="endDate = $event">
 </pip-time-range-edit>
-{{ startDate$ | async }}
 <pip-time-range [startDate]="startDate$ | async" [endDate]="endDate"></pip-time-range>

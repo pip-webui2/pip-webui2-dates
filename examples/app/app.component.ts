@@ -25,7 +25,6 @@ export const AppTranslations = {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public listIndex: number = 0;
   public themes: Theme[];
   public selectedTheme: Theme;
   public activeMediaQuery: boolean;
@@ -43,6 +42,7 @@ export class AppComponent {
       name: 'Date-time range Edit', id: 'date_time_range_list_edit', route: 'date_time_range_edit'
     }
   ];
+  public listIndex: number = 0;
   @ViewChild('sidenav') sidenav: MatSidenav;
 
   public constructor(
@@ -72,6 +72,8 @@ export class AppComponent {
         this.listIndex = this.list.findIndex((item) => {
           return "/" + item.route == this.url;
         })
+
+        this.listIndex = this.listIndex < 0 ? 0 : this.listIndex;
       }
     });
 
