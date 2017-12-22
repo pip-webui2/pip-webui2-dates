@@ -7,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimeRangeExampleComponent implements OnInit {
 
-	ngOnInit() { }
+	public dateInPast: Date  = new Date();
+
+	ngOnInit() {
+		this.dateInPast.setHours(this.dateInPast.getHours() - 700);
+	}
 
     public startDate = new Date();
     public endDate = new Date().setMinutes(this.startDate.getMinutes() + 15);
 
-	
 }

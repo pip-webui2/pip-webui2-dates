@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 
 import { LocalizedDatePipe } from './localized-date.pipe';
+import { ElapsedTimePipe } from './elapsed-date.pipe';
 
 const PIPES = [
-    LocalizedDatePipe
+    LocalizedDatePipe,
+    ElapsedTimePipe
 ];
 
 @NgModule({
