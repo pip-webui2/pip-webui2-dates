@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatIconModule, MatProgressBarModule } from '@angular/material';
+import { MatIconModule } from '@angular/material';
 
 import { PipDatePipesModule } from '../shared/pipes/pipes.module';
 
@@ -16,7 +16,6 @@ import { PipTimeRangeComponent } from './time-range.component';
     BrowserModule,
     FlexLayoutModule,
     MatIconModule,
-    MatProgressBarModule,
     
     PipDatePipesModule
   ],
