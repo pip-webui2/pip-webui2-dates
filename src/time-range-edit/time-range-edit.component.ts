@@ -74,7 +74,7 @@ export class PipTimeRangeEditComponent implements OnInit, AfterViewInit {
             h = String(h).length == 1 ? '0' + String(h) : h;
             m = String(m).length == 1 ? '0' + String(m) : m;
             this.times.push(
-                { name: h + ':' + m, date: _.clone(start) }
+                { name: h + ':' + m, date: Object.assign(start) }
             );
         }
     }
