@@ -1,5 +1,5 @@
 {
-  "name": "pip-webui2-dates-temp",
+  "name": "pip-webui2-dates",
   "version": "0.0.2",
   "peerDependencies": {
     "@angular/cdk": "^6.4.7",
