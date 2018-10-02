@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TranslateModule } from '@ngx-translate/core';
 import {
@@ -21,7 +21,7 @@ import { PipTimeRangeEditComponent } from './time-range-edit.component';
     PipTimeRangeEditComponent
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     FlexLayoutModule,
     TranslateModule,
     MatButtonModule,

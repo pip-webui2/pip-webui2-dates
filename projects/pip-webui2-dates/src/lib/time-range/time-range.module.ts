@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatIconModule } from '@angular/material';
 
@@ -13,7 +13,7 @@ import { PipTimeRangeComponent } from './time-range.component';
     PipTimeRangeComponent
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     FlexLayoutModule,
     MatIconModule,
 
