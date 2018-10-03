@@ -5,9 +5,6 @@ import { TranslateService } from '@ngx-translate/core';
 import localeRu from '@angular/common/locales/ru';
 import localeFr from '@angular/common/locales/fr';
 import localeDe from '@angular/common/locales/de';
-registerLocaleData(localeRu, 'ru');
-registerLocaleData(localeFr, 'fr');
-registerLocaleData(localeDe, 'de');
 
 @Pipe({
   name: 'localizedDate',
@@ -16,6 +13,9 @@ registerLocaleData(localeDe, 'de');
 export class LocalizedDatePipe implements PipeTransform {
 
   constructor(private translateService: TranslateService) {
+    registerLocaleData(localeRu, 'ru');
+    registerLocaleData(localeFr, 'fr');
+    registerLocaleData(localeDe, 'de');
   }
 
   transform(value: any, pattern: string = 'mediumDate'): any {

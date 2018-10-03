@@ -14,7 +14,8 @@ import { TimeRangeEditExampleModule } from './time-range-edit-example/time-range
 
 export const CustomBreakPointsProvider = {
   provide: BREAKPOINTS,
-  useValue: [...DEFAULT_BREAKPOINTS]
+  useValue: [...DEFAULT_BREAKPOINTS],
+  multi: true
 };
 
 @NgModule({
