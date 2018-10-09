@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TranslateModule } from '@ngx-translate/core';
@@ -12,9 +11,8 @@ import {
   MatSelectModule
 } from '@angular/material';
 
-import { PipDatePipesModule } from '../shared/pipes/pipes.module';
-
 import { PipTimeRangeEditComponent } from './time-range-edit.component';
+import { PipDatePipesModule } from '../shared/pipes/pipes.module';
 
 @NgModule({
   declarations: [

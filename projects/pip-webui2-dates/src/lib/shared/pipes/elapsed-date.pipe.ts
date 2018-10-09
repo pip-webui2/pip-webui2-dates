@@ -1,9 +1,9 @@
 import { OnDestroy, ChangeDetectorRef, Pipe, PipeTransform } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
-import { Observable, of } from 'rxjs';
-import { LocalizedDatePipe } from './localized-date.pipe';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { Observable, of } from 'rxjs';
 
+import { LocalizedDatePipe } from './localized-date.pipe';
 import { ElapsedPipeTranslations } from '../translations/elapsed-pipe.translations';
 
 @Pipe({

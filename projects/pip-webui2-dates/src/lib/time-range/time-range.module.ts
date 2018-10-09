@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
-
 import { CommonModule } from '@angular/common';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatIconModule } from '@angular/material';
 
 import { PipDatePipesModule } from '../shared/pipes/pipes.module';
@@ -14,7 +12,6 @@ import { PipTimeRangeComponent } from './time-range.component';
   ],
   imports: [
     CommonModule,
-    FlexLayoutModule,
     MatIconModule,
 
     PipDatePipesModule
