@@ -13,7 +13,7 @@
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
             <mat-form-field fxFlex>
-                <mat-select placeholder="" [(value)]="startTime" (change)="onStartTimeChange($event)">
+                <mat-select placeholder="" [(value)]="startTime" (selectionChange)="onStartTimeChange($event)">
                     <mat-option *ngFor="let time of times" [value]="time.date">
                         {{ time.name }}
                     </mat-option>
@@ -29,7 +29,7 @@
                 <mat-datepicker #pickerEnd></mat-datepicker>
             </mat-form-field>
             <mat-form-field fxFlex>
-                <mat-select placeholder="" [(value)]="endTime" (change)="onEndTimeChange($event)">
+                <mat-select placeholder="" [(value)]="endTime" (selectionChange)="onEndTimeChange($event)">
                     <mat-option *ngFor="let time of times" [value]="time.date">
                         {{ time.name }}
                     </mat-option>

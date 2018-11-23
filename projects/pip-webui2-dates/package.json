@@ -1,21 +1,21 @@
 {
   "name": "pip-webui2-dates",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/pip-webui2/pip-webui2-dates"
   },
   "dependencies": {
-    "pip-webui2-themes": "^1.0.1"
+    "@ngx-translate/core": "^11.0.1",
+    "pip-webui2-themes": "^1.1.2"
   },
   "peerDependencies": {
-    "@angular/cdk": "^6.4.7",
-    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/flex-layout": "^6.0.0-beta.18",
-    "@angular/material": "^6.4.7",
-    "@ngx-translate/core": "^10.0.2",
-    "rxjs": "~6.2.0"
+    "@angular/cdk": "^7.1.0",
+    "@angular/common": "^7.1.0",
+    "@angular/core": "^7.1.0",
+    "@angular/flex-layout": "^7.0.0-beta.19",
+    "@angular/material": "^7.1.0",
+    "rxjs": "~6.3.3"
   }
 }

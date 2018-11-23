@@ -61,11 +61,9 @@ export class PipTimeRangeEditComponent implements OnInit, AfterViewInit {
             console.warn('pip-time-range-edit: intervalInMinutes must be > 0 and < 1440');
             this.intervalInMinutes = 30;
         }
-
-        const start = new Date();
-        start.setHours(0, 0, 0, 0);
-
         for (let i = 0; i < 24 * 60; i = i + this.intervalInMinutes) {
+            const start = new Date();
+            start.setHours(0, 0, 0, 0);
             start.setHours(i / 60, i % 60);
             let h: any = start.getHours();
             let m: any = start.getMinutes();
