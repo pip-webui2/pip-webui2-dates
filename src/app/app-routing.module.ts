@@ -7,7 +7,7 @@ import { TimeRangeExampleComponent } from './time-range-example/time-range-examp
 const appRoutes: Routes = [
     { path: 'date_time_range', component: TimeRangeExampleComponent },
     { path: 'date_time_range_edit', component: TimeRangeEditExampleComponent },
-    { path: '', pathMatch: 'full', redirectTo: 'date_time_range_list' }
+    { path: '**', redirectTo: 'date_time_range' }
 ];
 
 @NgModule({

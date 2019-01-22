@@ -75,4 +75,19 @@ Angular 7 minor update and theme module update
 No breaking changes in this version
 
 ### Bug Fixes
-No fixes in this version 
+No fixes in this version
+
+## <a name="1.1.2"></a> 1.1.2 (2019-01-22)
+
+Update for new themes and bundle size
+
+### Features
+* **date time**: date and time editing controls
+* **localized date**: pipe that shows localized date
+* **elapsed date**: pipe that shows localized date range from date to now
+
+### Breaking Changes
+No breaking changes in this version
+
+### Bug Fixes
+No fixes in this version
