@@ -91,3 +91,18 @@ No breaking changes in this version
 
 ### Bug Fixes
 No fixes in this version
+
+## <a name="1.1.3"></a> 1.1.3 (2019-11-14)
+
+Updated for new themes
+
+### Features
+* **date time**: date and time editing controls
+* **localized date**: pipe that shows localized date
+* **elapsed date**: pipe that shows localized date range from date to now
+
+### Breaking Changes
+No breaking changes in this version
+
+### Bug Fixes
+No fixes in this version

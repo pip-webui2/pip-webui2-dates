@@ -1,6 +1,6 @@
 {
   "name": "pip-webui2-dates",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@ngx-translate/core": "^11.0.1",
-    "pip-webui2-themes": "^1.1.10"
+    "pip-webui2-themes": "^1.1.17"
   },
   "peerDependencies": {
     "@angular/cdk": "^7.1.1",
