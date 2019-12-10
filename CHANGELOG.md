@@ -106,3 +106,18 @@ No breaking changes in this version
 
 ### Bug Fixes
 No fixes in this version
+
+## <a name="1.1.4"></a> 1.1.4 (2019-12-10)
+
+`accent` and `primary` colors switched in `mst-elegant-theme`
+
+### Features
+* **date time**: date and time editing controls
+* **localized date**: pipe that shows localized date
+* **elapsed date**: pipe that shows localized date range from date to now
+
+### Breaking Changes
+No breaking changes in this version
+
+### Bug Fixes
+No fixes in this version
