@@ -121,3 +121,18 @@ No breaking changes in this version
 
 ### Bug Fixes
 No fixes in this version
+
+## <a name="1.1.5"></a> 1.1.5 (2019-12-20)
+
+All `/deep/` in scss changed with `::ng-deep`, because it is deprecated in Angular 8
+
+### Features
+* **date time**: date and time editing controls
+* **localized date**: pipe that shows localized date
+* **elapsed date**: pipe that shows localized date range from date to now
+
+### Breaking Changes
+No breaking changes in this version
+
+### Bug Fixes
+No fixes in this version

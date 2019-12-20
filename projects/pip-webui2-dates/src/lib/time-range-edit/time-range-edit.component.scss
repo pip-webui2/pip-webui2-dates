@@ -3,7 +3,7 @@
 @mixin location-edit-mixin($theme) {
     $background: map-get($theme, background);
     $foreground: map-get($theme, foreground);
-    :host .mat-form-field /deep/ .mat-input-suffix .mat-icon {
+    :host .mat-form-field ::ng-deep .mat-input-suffix .mat-icon {
         color: mat-color($foreground, secondary-text);
     }
 }
@@ -20,7 +20,7 @@
     }
     .mat-form-field {
         width: auto;
-        /deep/ .mat-input-suffix {
+        ::ng-deep .mat-input-suffix {
             .mat-icon {
                 height: 29px;
                 width: 22px;
